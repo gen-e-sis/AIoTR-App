@@ -94,6 +94,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/language_button" />
 
+
+    <Button
+        android:id="@+id/details_button"
+        android:layout_width="192dp"
+        android:layout_height="84dp"
+        android:layout_marginStart="71dp"
+        android:layout_marginEnd="71dp"
+        android:text="Details Button"
+        app:layout_constraintBottom_toTopOf="@+id/master_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/language_button"
+        app:layout_constraintVertical_bias="0.116" />
+
     <Button
         android:id="@+id/language_button"
         android:layout_width="136dp"

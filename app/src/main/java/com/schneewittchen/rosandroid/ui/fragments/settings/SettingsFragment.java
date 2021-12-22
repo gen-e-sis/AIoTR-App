@@ -35,6 +35,9 @@ public class SettingsFragment extends Fragment {
         TabButton sshButton = new TabButton(v .findViewById(R.id.ssh_button));
         sshButton.linkToFragment(4, getParentFragmentManager().beginTransaction());
 
+        TabButton detailsButton = new TabButton(v .findViewById(R.id.details_button));
+        sshButton.linkToFragment(8, getParentFragmentManager().beginTransaction());
+
         return v;
     }
 

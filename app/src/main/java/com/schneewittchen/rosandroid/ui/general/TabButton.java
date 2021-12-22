@@ -9,6 +9,8 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.fragment.app.FragmentManager;
 
 import com.schneewittchen.rosandroid.R;
+import com.schneewittchen.rosandroid.ui.fragments.details.DetailContentFragment;
+import com.schneewittchen.rosandroid.ui.fragments.details.DetailMainFragment;
 import com.schneewittchen.rosandroid.ui.fragments.home.HomeFragment;
 import com.schneewittchen.rosandroid.ui.fragments.manualControl.ManualControlFragment;
 import com.schneewittchen.rosandroid.ui.fragments.map.MapxusFragment;
@@ -17,6 +19,7 @@ import com.schneewittchen.rosandroid.ui.fragments.settings.SettingsFragment;
 import com.schneewittchen.rosandroid.ui.fragments.smartHomeControl.SmartHomeControlFragment;
 import com.schneewittchen.rosandroid.ui.fragments.ssh.SshFragment;
 import com.schneewittchen.rosandroid.ui.fragments.robotarm.RobotarmFragment;
+import com.schneewittchen.rosandroid.ui.fragments.viz.VizFragment;
 
 import java.lang.String;
 
@@ -41,6 +44,7 @@ public class TabButton {
         4 : SshFragment
         5 : SmartHomeControlFragment
         6 : RobotArmFragment
+        7 : manualControl
          */
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,12 +67,15 @@ public class TabButton {
                         break;
                     case 5:
                         ft.replace(R.id.main_container, new SmartHomeControlFragment());
-                        break;
+                        break
                     case 6:
                         ft.replace(R.id.main_container, new RobotarmFragment());
                         break;
                     case 7:
-                        ft.replace(R.id.main_container, new ManualControlFragment());
+                        ft.replace(R.id.main_container, new VizFragment());
+                        break;
+                    case 8:
+                        ft.replace(R.id.main_container, new DetailMainFragment());
                         break;
                     default:
                         Log.e(TAG, "onClick: Fragment type invalid. Tried" + FragmentType);
