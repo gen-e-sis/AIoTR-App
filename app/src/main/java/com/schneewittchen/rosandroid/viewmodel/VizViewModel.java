@@ -37,6 +37,10 @@ public class VizViewModel extends AndroidViewModel {
         rosDomain = RosDomain.getInstance(application);
     }
 
+    public void createWidget(String selectedText){
+        rosDomain.createWidget(null, "Joystick");
+    }
+
     public void updateWidget(BaseEntity widget) {
         rosDomain.updateWidget(null, widget);
     }

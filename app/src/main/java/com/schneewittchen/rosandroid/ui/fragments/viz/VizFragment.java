@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.ImageButton;
 
@@ -16,11 +17,15 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.google.android.material.switchmaterial.SwitchMaterial;
 import com.schneewittchen.rosandroid.R;
+import com.schneewittchen.rosandroid.domain.RosDomain;
+import com.schneewittchen.rosandroid.ui.fragments.details.DetailMainFragment;
+import com.schneewittchen.rosandroid.viewmodel.DetailsViewModel;
 import com.schneewittchen.rosandroid.viewmodel.VizViewModel;
 import com.schneewittchen.rosandroid.ui.general.DataListener;
 import com.schneewittchen.rosandroid.ui.general.WidgetChangeListener;
 import com.schneewittchen.rosandroid.model.entities.widgets.BaseEntity;
 import com.schneewittchen.rosandroid.model.repositories.rosRepo.node.BaseData;
+import com.schneewittchen.rosandroid.widgets.joystick.JoystickEntity;
 
 
 /**
@@ -41,6 +46,7 @@ public class VizFragment extends Fragment implements DataListener, WidgetChangeL
     private DrawerLayout drawerLayout;
     private ImageButton optionsOpenButton;
     private SwitchMaterial vizEditModeSwitch;
+//    private final RosDomain rosDomain;
 
 
     public static VizFragment newInstance() {
@@ -69,6 +75,24 @@ public class VizFragment extends Fragment implements DataListener, WidgetChangeL
         drawerLayout.setScrimColor(getResources().getColor(R.color.drawerFadeColor));
 
         vizEditModeSwitch = view.findViewById(R.id.edit_viz_switch);
+
+        Button button = view.findViewById(R.id.addjoy);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                RosDomain ros = new RosDomain;
+//                BaseEntity joystick = new BaseEntity(6, JoystickEntity, );
+//                ros.addWidget(6, joystick);
+//                BaseEntity joy = new BaseEntity() {
+//                    @Override
+//                    public void addEntity(BaseEntity entity) {
+//                        super.addEntity(entity);
+//                    }
+//                }
+                mViewModel.createWidget("Joystick");
+            }
+        });
+
     }
 
     @Override
