@@ -91,7 +91,7 @@ public class TabButton {
                         ft.replace(R.id.main_container, new RobotarmFragment());
                         break;
                     case 7:
-                        ft.replace(R.id.main_container, new VizFragment());
+                        ft.replace(R.id.main_container, new DetailContentFragment());
                         break;
                     case 8:
                         ft.replace(R.id.main_container, new DetailMainFragment());
