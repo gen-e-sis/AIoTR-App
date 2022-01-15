@@ -21,6 +21,7 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import com.schneewittchen.rosandroid.ui.general.TabButton;
 
 import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.snackbar.Snackbar;
@@ -47,7 +48,7 @@ public class DetailMainFragment extends Fragment
 
     public static String TAG = DetailMainFragment.class.getSimpleName();
 
-    private NavController navController;
+//    private NavController navController;
     private DetailsViewModel viewModel;
     private MaterialCardView addWidgetCard;
     private TextView noWidgetTextView;
@@ -67,10 +68,8 @@ public class DetailMainFragment extends Fragment
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-
         viewModel = new ViewModelProvider(this).get(DetailsViewModel.class);
         viewModel.select(null);
-
 
         currentWidgetPath = new ArrayList<>();
 
@@ -79,7 +78,7 @@ public class DetailMainFragment extends Fragment
         recyclerView = view.findViewById(R.id.recyclerview);
         addWidgetCard = view.findViewById(R.id.add_widget_card);
 
-        navController = Navigation.findNavController(view);
+//        navController = Navigation.findNavController(view);
 
         // React on new widget click action
         addWidgetCard.setOnClickListener(v -> showDialogWithWidgetNames());
@@ -104,13 +103,16 @@ public class DetailMainFragment extends Fragment
 
         viewModel.widgetsEmpty().observe(getViewLifecycleOwner(), empty ->
                 noWidgetTextView.setVisibility(empty ? View.VISIBLE : View.GONE));
+
+        TabButton settingButton = new TabButton(view.findViewById(R.id.settings));
+        settingButton.linkToFragment(2, getParentFragmentManager().beginTransaction());
     }
 
     private void onWidgetClicked(BaseEntity entity) {
         Log.i(TAG, "Clicked " + entity.name);
 
         viewModel.select(entity.id);
-        navController.navigate(R.id.action_detailOverview_to_depth1);
+//        navController.navigate(R.id.action_detailOverview_to_depth1);
     }
 
     private void showDialogWithWidgetNames() {

@@ -69,21 +69,21 @@ public class DetailContentFragment extends Fragment implements WidgetChangeListe
             viewModel.popPath(1);
         }
 
-        navController = Navigation.findNavController(view);
+//        navController = Navigation.findNavController(view);
         viewModel = new ViewModelProvider(this).get(DetailsViewModel.class);
 
         widgetContainer = view.findViewById(R.id.widget_container);
         backButtonOverview = view.findViewById(R.id.back_button_overview);
         backButtonGroup = view.findViewById(R.id.back_button_group);
 
-        viewModel.getWidget().observe(getViewLifecycleOwner(), this::initView);
+//        viewModel.getWidget().observe(getViewLifecycleOwner(), this::initView);
 
         // Construct back buttons
-        backButtonOverview.setOnClickListener(v ->
-            navController.popBackStack(R.id.detailOverviewFragment, false));
-
-        backButtonGroup.setOnClickListener(v ->
-            navController.popBackStack());
+//        backButtonOverview.setOnClickListener(v ->
+//            navController.popBackStack(R.id.detailOverviewFragment, false));
+//
+//        backButtonGroup.setOnClickListener(v ->
+//            navController.popBackStack());
     }
 
     private void initView(BaseEntity baseEntity) {

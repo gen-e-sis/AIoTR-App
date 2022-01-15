@@ -37,11 +37,13 @@ public class SettingsFragment extends Fragment {
         TabButton sshButton = new TabButton(v .findViewById(R.id.ssh_button));
         sshButton.linkToFragment(4, getParentFragmentManager().beginTransaction());
 
-        Button detailsButton = v.findViewById(R.id.details_button);
-        detailsButton.setOnClickListener(v1 -> {
-            NavController navController = Navigation.findNavController(requireActivity(), R.id.fragment_container);
-            navController.navigate(R.id.action_to_detailFragment);
-        });
+        TabButton detailsButton = new TabButton(v.findViewById(R.id.details_button));
+        detailsButton.linkToFragment(8, getParentFragmentManager().beginTransaction());
+//        Button detailsButton = v.findViewById(R.id.details_button);
+//        detailsButton.setOnClickListener(v1 -> {
+//            NavController navController = Navigation.findNavController(requireActivity(), R.id.fragment_container);
+//            navController.navigate(R.id.action_to_detailFragment);
+//        });
 //        detailsButton.linkToFragment(8, getParentFragmentManager().beginTransaction());
 
         return v;

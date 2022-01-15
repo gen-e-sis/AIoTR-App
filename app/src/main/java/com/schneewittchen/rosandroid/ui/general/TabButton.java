@@ -94,7 +94,7 @@ public class TabButton {
                         ft.replace(R.id.main_container, new VizFragment());
                         break;
                     case 8:
-                        navController.navigate(R.id.action_to_detailFragment);
+                        ft.replace(R.id.main_container, new DetailMainFragment());
                         break;
                     default:
                         Log.e(TAG, "onClick: Fragment type invalid. Tried" + FragmentType);
