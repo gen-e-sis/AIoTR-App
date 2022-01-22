@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -13,25 +14,27 @@
         android:layout_marginTop="10dp"
         android:text="@string/home"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.mapbox.mapboxsdk.maps.MapView
         android:id="@+id/mapView"
-        android:layout_width="411dp"
-        android:layout_height="731dp"
-        app:mapbox_cameraTargetLat="@string/default_lat"
-        app:mapbox_cameraTargetLng="@string/default_lon"
-        app:mapbox_cameraZoom="17"/>
-
-
-    <ImageView
-        android:id="@+id/joystick"
-        android:layout_width="209dp"
-        android:layout_height="274dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginBottom="10dp"
-        app:srcCompat="@drawable/intro_joystick" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:mapbox_cameraTargetLat="@string/default_lat"
+        app:mapbox_cameraTargetLng="@string/default_lon"
+        app:mapbox_cameraZoom="17">
+
+        <ImageView
+            android:id="@+id/joystick"
+            android:layout_width="209dp"
+            android:layout_height="274dp"
+            android:layout_marginBottom="10dp"
+            app:srcCompat="@drawable/intro_joystick" />
+    </com.mapbox.mapboxsdk.maps.MapView>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

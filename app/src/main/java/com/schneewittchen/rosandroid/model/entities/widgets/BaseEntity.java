@@ -21,7 +21,7 @@ import java.util.Objects;
  * @updated on 10.03.21
  * @modified by Nico Studt
  */
-public abstract class BaseEntity {
+public class BaseEntity {
 
     public long id;
     public String name;

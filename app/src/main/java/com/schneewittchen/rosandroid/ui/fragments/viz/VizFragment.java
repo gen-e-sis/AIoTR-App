@@ -75,20 +75,20 @@ public class VizFragment extends Fragment implements DataListener, WidgetChangeL
         drawerLayout.setScrimColor(getResources().getColor(R.color.drawerFadeColor));
 
         vizEditModeSwitch = view.findViewById(R.id.edit_viz_switch);
-
+//        long parentId = 6;
         Button button = view.findViewById(R.id.addjoy);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                RosDomain ros = new RosDomain;
-//                BaseEntity joystick = new BaseEntity(6, JoystickEntity, );
-//                ros.addWidget(6, joystick);
+//                RosDomain ros = new RosDomain(new Application());
+//                BaseEntity joystick = new BaseEntity();
+//                ros.addWidget(parentId, joystick);
 //                BaseEntity joy = new BaseEntity() {
 //                    @Override
 //                    public void addEntity(BaseEntity entity) {
 //                        super.addEntity(entity);
 //                    }
-//                }
+//                };
                 mViewModel.createWidget("Joystick");
             }
         });
