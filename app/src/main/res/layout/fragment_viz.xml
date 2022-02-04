@@ -23,6 +23,11 @@
             android:padding="8dp"
             app:crossColor="#8000BCD4">
 
+            <Button
+                android:id="@+id/addjoy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add Joystick" />
         </com.schneewittchen.rosandroid.ui.fragments.viz.WidgetViewGroup>
 
         <com.google.android.material.navigation.NavigationView
