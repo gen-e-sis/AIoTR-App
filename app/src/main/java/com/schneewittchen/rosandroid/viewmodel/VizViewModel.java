@@ -30,7 +30,6 @@ public class VizViewModel extends AndroidViewModel {
 
     private final RosDomain rosDomain;
 
-
     public VizViewModel(@NonNull Application application) {
         super(application);
 
