@@ -1,4 +1,12 @@
 
+/*
+Created by Ryan Zhang.
+
+Implemented by Ryan Zhang.
+
+This is my only fucking contribution to this app.
+ */
+
 package com.schneewittchen.rosandroid.ui.general;
 
 import android.os.Bundle;
@@ -63,7 +71,8 @@ public class TabButton {
         4 : SshFragment
         5 : SmartHomeControlFragment
         6 : RobotArmFragment
-        7 : manualControl
+        7 : ManualControlFragment
+        8 : DetailMainFragment
          */
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
