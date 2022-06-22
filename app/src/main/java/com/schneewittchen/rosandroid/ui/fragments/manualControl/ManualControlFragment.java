@@ -55,8 +55,6 @@ public class ManualControlFragment extends Fragment {
         - RqtPlot
          */
 
-
-
         return v;
 
     }
