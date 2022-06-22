@@ -1,8 +1,10 @@
 # Built application files
 *.apk
-*.aar
 *.ap_
 *.aab
+
+# Because I fucking said so
+*.DS_Store
 
 # Files for the ART/Dalvik VM
 *.dex
