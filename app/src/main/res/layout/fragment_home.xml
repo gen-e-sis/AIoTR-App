@@ -43,7 +43,7 @@
         android:layout_marginTop="184dp"
         android:background="@drawable/round_button"
         android:drawableTop="@drawable/joystick"
-        android:onClick="goToMapFragment"
+        android:onClick="action_to_manualControlFragment"
         android:textColorLink="#1e90ff"
         app:icon="@drawable/joystick"
         app:iconSize="75dp"

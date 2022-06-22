@@ -24,7 +24,6 @@
         app:mapbox_cameraTargetLng="@string/default_lon"
         app:mapbox_cameraZoom="17"/>
 
-
     <ImageView
         android:id="@+id/joystick"
         android:layout_width="209dp"

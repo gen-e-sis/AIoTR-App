@@ -17,6 +17,7 @@ import com.schneewittchen.rosandroid.ui.fragments.map.MapxusFragment;
 import org.jetbrains.annotations.NotNull;
 
 import com.schneewittchen.rosandroid.ui.general.TabButton;
+import com.schneewittchen.rosandroid.widgets.joystick.JoystickView;
 
 public class ManualControlFragment extends Fragment {
 
@@ -30,10 +31,12 @@ public class ManualControlFragment extends Fragment {
         homeButton.linkToFragment(0, getParentFragmentManager().beginTransaction());
 
         return v;
+
     }
 
     @Override
     public void onViewCreated(@NonNull @NotNull View view, @Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
     }
+    
 }
