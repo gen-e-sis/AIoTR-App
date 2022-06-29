@@ -28,6 +28,7 @@
         app:mapbox_cameraZoom="17" />
 
     <com.schneewittchen.rosandroid.widgets.joystick.JoystickView
+        android:id="@+id/joystick"
         android:layout_width="300dp"
         android:layout_height="300dp"
         app:layout_constraintBottom_toBottomOf="parent"

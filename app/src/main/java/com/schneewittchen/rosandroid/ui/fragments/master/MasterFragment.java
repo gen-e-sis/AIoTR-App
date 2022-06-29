@@ -86,6 +86,8 @@ public class MasterFragment extends Fragment implements TextView.OnEditorActionL
 
         mViewModel = new ViewModelProvider(requireActivity()).get(MasterViewModel.class);
 
+//        mViewModel.setDeviceIp("192.168.200.2");
+
         // Define Views --------------------------------------------------------------
         ipAddressField = getView().findViewById(R.id.ipAddessTextView);
         ipAddressLayout = getView().findViewById(R.id.ipAddessLayout);
@@ -136,7 +138,10 @@ public class MasterFragment extends Fragment implements TextView.OnEditorActionL
 
         binding.connectButton.setOnClickListener(v -> {
                 updateMasterDetails();
-                mViewModel.setMasterDeviceIp(ipAddressField.getText().toString());
+                String st = ipAddressField.getText().toString();
+//                st = "192.168.232.2";
+                Log.d(TAG, "onActivityCreated: fuck this ipaddressfield fucker "+st);
+                mViewModel.setMasterDeviceIp(st);
                 mViewModel.connectToMaster();
         });
         binding.disconnectButton.setOnClickListener(v -> mViewModel.disconnectFromMaster());

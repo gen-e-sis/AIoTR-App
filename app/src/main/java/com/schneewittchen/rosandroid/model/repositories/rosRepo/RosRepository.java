@@ -68,7 +68,7 @@ public class RosRepository implements SubNode.NodeListener {
     private static RosRepository instance;
 
     private final WeakReference<Context> contextReference;
-    private MasterEntity master;
+    private MasterEntity master = new MasterEntity();
     private final List<BaseEntity> currentWidgets;
     private final HashMap<Topic, AbstractNode> currentNodes;
     private final MutableLiveData<ConnectionType> rosConnected;
@@ -174,6 +174,9 @@ public class RosRepository implements SubNode.NodeListener {
                 rosConnected.postValue(ConnectionType.FAILED);
             }
         }).execute(master);
+
+//        Log.d(TAG, "connectToMaster: fucking masturbate set");
+        
     }
 
     /**
@@ -427,6 +430,7 @@ public class RosRepository implements SubNode.NodeListener {
 
     private URI getMasterURI() {
         String masterString = String.format("http://%s:%s/", master.ip, master.port);
+//        String masterString = String.format("http://%s:%s/", "192.168.0.100", 11311);
         return URI.create(masterString);
     }
 
