@@ -11,7 +11,8 @@ import org.ros.internal.message.Message;
  * @updated on
  * @modified by
  */
-public class RosData {
+public class
+RosData {
 
     private final Topic topic;
     private final Message message;
