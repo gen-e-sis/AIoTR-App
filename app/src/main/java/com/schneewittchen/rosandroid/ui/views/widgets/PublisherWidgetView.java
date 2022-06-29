@@ -6,6 +6,7 @@ import android.util.Log;
 
 import androidx.annotation.Nullable;
 
+import com.schneewittchen.rosandroid.model.repositories.rosRepo.message.Topic;
 import com.schneewittchen.rosandroid.model.repositories.rosRepo.node.BaseData;
 import com.schneewittchen.rosandroid.ui.general.DataListener;
 import com.schneewittchen.rosandroid.widgets.button.ButtonData;
@@ -38,7 +39,9 @@ public abstract class PublisherWidgetView extends WidgetView implements IPublish
     public void publishViewData(BaseData data) {
         if(dataListener == null) return;
 
-        data.setTopic(widgetEntity.topic);
+        if(widgetEntity == null) data.setTopic(new Topic("unnamed", "untyped"));
+        else data.setTopic(widgetEntity.topic);
+
         dataListener.onNewWidgetData(data);
     }
 
