@@ -1,6 +1,7 @@
 package com.schneewittchen.aiotr.ui.fragments.manualControl;
 
 import android.app.Application;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
@@ -12,6 +13,7 @@ import com.schneewittchen.aiotr.domain.RosDomain;
 import com.schneewittchen.aiotr.model.entities.widgets.BaseEntity;
 import com.schneewittchen.aiotr.model.repositories.ConfigRepository;
 import com.schneewittchen.aiotr.model.repositories.ConfigRepositoryImpl;
+import com.schneewittchen.aiotr.model.repositories.rosRepo.message.RosData;
 import com.schneewittchen.aiotr.model.repositories.rosRepo.node.BaseData;
 
 import org.jetbrains.annotations.NotNull;
@@ -28,6 +30,7 @@ public class RyanViewModel extends AndroidViewModel {
 
     private ConfigRepository config;
     private MediatorLiveData<String> configTitle;
+    private LiveData<RosData> rosData;
 
     public RyanViewModel(@NonNull @NotNull Application application) {
         super(application);
@@ -35,6 +38,15 @@ public class RyanViewModel extends AndroidViewModel {
         config = ConfigRepositoryImpl.getInstance(getApplication());
 
         rosDomain = RosDomain.getInstance(application);
+
+        rosData = rosDomain.getData();
+        rosData.observeForever(data -> {
+            if(data.getTopic().name.equals("cmd_vel")) {
+                Log.d(TAG, "RyanViewModel: pp dick topic: "+data.getTopic().name+" "+data.getTopic().type);
+                Log.d(TAG, "RyanViewModel: fuck");
+            }
+            Log.d(TAG, "RyanViewModel: sum fuck in data: "+data.getTopic().name+" "+data.getTopic().type);
+        });
 
         if (selectedPath == null) {
             selectedPath = new MutableLiveData<>();
@@ -63,6 +75,7 @@ public class RyanViewModel extends AndroidViewModel {
     }
 
     public void publishData(BaseData data) {
+        Log.d(TAG, "publishData: ryan is a fuck");
         rosDomain.publishData(data);
     }
 
