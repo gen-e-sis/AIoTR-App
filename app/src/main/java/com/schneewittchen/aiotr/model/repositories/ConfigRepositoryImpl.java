@@ -56,7 +56,7 @@ public class ConfigRepositoryImpl implements ConfigRepository {
         mCurrentConfigId = new MediatorLiveData<>();
         mCurrentConfigId.addSource(mDataStorage.getLatestConfig(), config -> {
             Log.i(TAG, "New Config: " + config);
-
+            Log.d(TAG, "New Config: config id = "+config.id);
             if (config != null)
                 mCurrentConfigId.postValue(config.id);
         });
@@ -235,6 +235,7 @@ public class ConfigRepositoryImpl implements ConfigRepository {
 
         BaseEntity widget = (BaseEntity) object;
         long configId = mCurrentConfigId.getValue();
+//        long configId = 1;
 
         String widgetName = "";
         for (int count = 1; count > 0; count++) {

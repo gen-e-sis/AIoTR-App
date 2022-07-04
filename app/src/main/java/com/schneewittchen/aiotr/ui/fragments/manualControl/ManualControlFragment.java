@@ -15,15 +15,17 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.schneewittchen.aiotr.R;
 import com.schneewittchen.aiotr.model.entities.widgets.BaseEntity;
+import com.schneewittchen.aiotr.model.repositories.rosRepo.message.Topic;
 import com.schneewittchen.aiotr.model.repositories.rosRepo.node.BaseData;
 
 import org.jetbrains.annotations.NotNull;
 
 import com.schneewittchen.aiotr.ui.general.DataListener;
 import com.schneewittchen.aiotr.ui.general.TabButton;
+import com.schneewittchen.aiotr.widgets.joystick.JoystickData;
 import com.schneewittchen.aiotr.widgets.joystick.JoystickView;
 
-public class ManualControlFragment extends Fragment implements DataListener {
+public class ManualControlFragment extends Fragment implements DataListener, JoystickInterface {
 
     private final static String TAG = ManualControlFragment.class.getSimpleName();
     private RyanViewModel ryanViewModel; // fucking love coding don't we
@@ -45,6 +47,7 @@ public class ManualControlFragment extends Fragment implements DataListener {
         homeButton.linkToFragment(0, getParentFragmentManager().beginTransaction());
 
         joystick = v.findViewById(R.id.joystick);
+        joystick.setJoystickFragment(this);
 
         return v;
     }
@@ -54,19 +57,33 @@ public class ManualControlFragment extends Fragment implements DataListener {
         super.onViewCreated(view, savedInstanceState);
 
         ryanViewModel = new ViewModelProvider(this).get(RyanViewModel.class);
-
-        ryanViewModel.createWidget("Joystick");
-
-        joystickEntity = ryanViewModel.retrieveJoystick();
-        joystick.setWidgetEntity(joystickEntity);
+//
+//        ryanViewModel.createWidget("Joystick");
+//
+//        try {
+//            Thread.sleep(10000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+//
+//        joystickEntity = ryanViewModel.retrieveJoystick();
+//        joystick.setWidgetEntity(joystickEntity);
 
     }
 
     @Override
     public void onNewWidgetData(BaseData data) {
         Log.d(TAG, "onNewWidgetData: fuck");
-        ryanViewModel.publishData(data);
+    }
 
+
+    @Override
+    public void onJoystickMove(float x, float y) {
+        Log.d(TAG, "onJoystickMove: fuck you "+x+" "+y);
+        JoystickData data = new JoystickData(x, y) {};
+//        data.setTopic(new Topic("cmd_vel", "geometry_msgs/Twist"));
+        ryanViewModel.publishData(data);
     }
 
 }
+

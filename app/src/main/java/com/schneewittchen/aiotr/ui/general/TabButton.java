@@ -26,6 +26,7 @@ import com.schneewittchen.aiotr.ui.fragments.settings.SettingsFragment;
 import com.schneewittchen.aiotr.ui.fragments.smartHomeControl.SmartHomeControlFragment;
 import com.schneewittchen.aiotr.ui.fragments.ssh.SshFragment;
 import com.schneewittchen.aiotr.ui.fragments.robotarm.RobotarmFragment;
+import com.schneewittchen.aiotr.ui.fragments.viz.VizFragment;
 
 import java.lang.String;
 
@@ -65,6 +66,7 @@ public class TabButton {
         6 : RobotArmFragment
         7 : ManualControlFragment
         8 : DetailMainFragment
+        9 : VizFragment
          */
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -96,6 +98,9 @@ public class TabButton {
                         break;
                     case 8:
                         ft.replace(R.id.main_container, new DetailMainFragment());
+                        break;
+                    case 9:
+                        ft.replace(R.id.main_container, new VizFragment());
                         break;
                     default:
                         Log.e(TAG, "onClick: Fragment type invalid. Tried" + FragmentType);

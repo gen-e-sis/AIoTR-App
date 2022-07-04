@@ -15,6 +15,7 @@ import com.schneewittchen.aiotr.model.repositories.rosRepo.message.RosData;
 import com.schneewittchen.aiotr.model.repositories.rosRepo.message.Topic;
 import com.schneewittchen.aiotr.model.repositories.rosRepo.node.BaseData;
 import com.schneewittchen.aiotr.model.entities.widgets.BaseEntity;
+import com.schneewittchen.aiotr.utility.LambdaTask;
 
 import java.util.List;
 
@@ -82,8 +83,8 @@ public class RosDomain {
     }
 
     public void createWidget(Long parentId, String widgetType) {
-        configRepository.createWidget(parentId, widgetType);
-//        new LambdaTask(() -> configRepository.createWidget(parentId, widgetType)).execute();
+//        configRepository.createWidget(parentId, widgetType);
+        new LambdaTask(() -> configRepository.createWidget(parentId, widgetType)).execute();
     }
 
     public void addWidget(Long parentId, BaseEntity widget) {

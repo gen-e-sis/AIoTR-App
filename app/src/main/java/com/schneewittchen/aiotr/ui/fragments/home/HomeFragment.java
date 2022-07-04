@@ -9,18 +9,23 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 
 import com.schneewittchen.aiotr.R;
 
 import org.jetbrains.annotations.NotNull;
 
+import com.schneewittchen.aiotr.ui.fragments.manualControl.RyanViewModel;
 import com.schneewittchen.aiotr.ui.general.TabButton;
+import com.schneewittchen.aiotr.viewmodel.MainViewModel;
 
 public class HomeFragment extends Fragment {
 
+    final public static String TAG = HomeFragment.class.getSimpleName();
+
     private static TabButton autoNav, settings, shc, robotArm, manualControl;
 
-    final public static String TAG = HomeFragment.class.getSimpleName();
+    private RyanViewModel rvm;
 
     @Nullable
     @org.jetbrains.annotations.Nullable
@@ -45,5 +50,12 @@ public class HomeFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull @NotNull View view, @Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        rvm = new ViewModelProvider(this).get(RyanViewModel.class);
+        if (this.getArguments() != null) {
+            rvm.createFirstConfig("ewar");
+        }
     }
+
+
+
 }

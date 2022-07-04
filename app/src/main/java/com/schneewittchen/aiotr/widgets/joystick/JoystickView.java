@@ -9,6 +9,7 @@ import android.view.MotionEvent;
 import androidx.annotation.Nullable;
 
 import com.schneewittchen.aiotr.R;
+import com.schneewittchen.aiotr.ui.fragments.manualControl.JoystickInterface;
 import com.schneewittchen.aiotr.ui.views.widgets.PublisherWidgetView;
 import com.schneewittchen.aiotr.utility.Utils;
 
@@ -20,6 +21,7 @@ import com.schneewittchen.aiotr.utility.Utils;
  * @version 1.1.0
  * @created on 18.10.19
  */
+
 public class JoystickView extends PublisherWidgetView {
 
     public static final String TAG = JoystickView.class.getSimpleName();
@@ -32,6 +34,7 @@ public class JoystickView extends PublisherWidgetView {
     float posX;
     float posY;
 
+    private JoystickInterface manualControlFragment;
 
     public JoystickView(Context context) {
         super(context);
@@ -59,6 +62,12 @@ public class JoystickView extends PublisherWidgetView {
         linePaint.setStyle(Paint.Style.STROKE);
         linePaint.setAlpha(50);
         linePaint.setStrokeWidth(Utils.dpToPx(getContext(), 2));
+
+
+        // fragment
+
+
+
     }
 
     // Move to polarCoordinates
@@ -82,6 +91,9 @@ public class JoystickView extends PublisherWidgetView {
         float eventY = event.getY();
         float[] polars = convertFromPxToPolar(eventX, eventY);
 
+        //pp poopoo?
+//        manualControlFragment.onJoystickMove(eventX, eventY);
+
         switch(event.getActionMasked()) {
             case MotionEvent.ACTION_UP:
                 moveTo(0, 0);
@@ -89,6 +101,7 @@ public class JoystickView extends PublisherWidgetView {
             case MotionEvent.ACTION_MOVE:
             case MotionEvent.ACTION_DOWN:
                 moveTo(polars[0], polars[1]);
+                manualControlFragment.onJoystickMove(polars[0], polars[1]);
                 break;
 
             default:
@@ -152,4 +165,9 @@ public class JoystickView extends PublisherWidgetView {
 
         return px;
     }
+
+    public void setJoystickFragment(JoystickInterface joystickInterface) {
+        manualControlFragment = joystickInterface;
+    }
+
 }
