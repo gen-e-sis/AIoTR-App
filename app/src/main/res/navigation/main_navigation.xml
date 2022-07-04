@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/sshFragment"
-        android:name="com.schneewittchen.rosandroid.ui.fragments.ssh.SshFragment"
+        android:name="com.schneewittchen.aiotr.ui.fragments.ssh.SshFragment"
         android:label="SshFragment"
         tools:layout="@layout/fragment_ssh" />
 
@@ -21,7 +21,7 @@
 
     <fragment
         android:id="@+id/detailOverviewFragment"
-        android:name="com.schneewittchen.rosandroid.ui.fragments.details.DetailMainFragment"
+        android:name="com.schneewittchen.aiotr.ui.fragments.details.DetailMainFragment"
         android:label="DetailContentFragment"
         tools:layout="@layout/fragment_detail_main">
         <action
@@ -38,7 +38,7 @@
 
     <fragment
         android:id="@+id/masterFragment"
-        android:name="com.schneewittchen.rosandroid.ui.fragments.master.MasterFragment"
+        android:name="com.schneewittchen.aiotr.ui.fragments.master.MasterFragment"
         android:label="MasterFragment"
         tools:layout="@layout/fragment_master" />
 
@@ -51,7 +51,7 @@
 
     <fragment
         android:id="@+id/vizFragment"
-        android:name="com.schneewittchen.rosandroid.ui.fragments.viz.VizFragment"
+        android:name="com.schneewittchen.aiotr.ui.fragments.viz.VizFragment"
         android:label="VizFragment"
         tools:layout="@layout/fragment_viz" />
 
@@ -63,7 +63,7 @@
 
     <fragment
         android:id="@+id/detailWidgetDepth1"
-        android:name="com.schneewittchen.rosandroid.ui.fragments.details.DetailContentFragment"
+        android:name="com.schneewittchen.aiotr.ui.fragments.details.DetailContentFragment"
         android:label="DetailGroupOverviewFragment"
         tools:layout="@layout/fragment_detail_content">
         <action
@@ -73,13 +73,13 @@
 
     <fragment
         android:id="@+id/detailWidgetDepth2"
-        android:name="com.schneewittchen.rosandroid.ui.fragments.details.DetailContentFragment"
+        android:name="com.schneewittchen.aiotr.ui.fragments.details.DetailContentFragment"
         android:label="DetailGroupOverviewFragment"
         tools:layout="@layout/fragment_detail_content" />
 
     <fragment
         android:id="@+id/mapxusFragment"
-        android:name="com.schneewittchen.rosandroid.ui.fragments.map.MapxusFragment"
+        android:name="com.schneewittchen.aiotr.ui.fragments.map.MapxusFragment"
         android:label="MapxusFragment"
         tools:layout="@layout/fragment_mapxus_map"/>
 
@@ -91,7 +91,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.schneewittchen.rosandroid.ui.fragments.home.HomeFragment"
+        android:name="com.schneewittchen.aiotr.ui.fragments.home.HomeFragment"
         android:label="HomeFragment"
         tools:layout="@layout/fragment_home"/>
 
@@ -103,7 +103,7 @@
 
     <fragment
         android:id="@+id/settingsFragment"
-        android:name="com.schneewittchen.rosandroid.ui.fragments.settings.SettingsFragment"
+        android:name="com.schneewittchen.aiotr.ui.fragments.settings.SettingsFragment"
         android:label="SettingsFragment"
         tools:layout="@layout/fragment_settings"/>
 
@@ -115,7 +115,7 @@
 
     <fragment
         android:id="@+id/smartHomeControl"
-        android:name="com.schneewittchen.rosandroid.ui.fragments.smartHomeControl.SmartHomeControlFragment"
+        android:name="com.schneewittchen.aiotr.ui.fragments.smartHomeControl.SmartHomeControlFragment"
         android:label="SmartHomeControlFragment"
         tools:layout="@layout/fragment_smart_home_control"/>
 
@@ -127,7 +127,7 @@
 
     <fragment
         android:id="@+id/manualControl"
-        android:name="com.schneewittchen.rosandroid.ui.fragments.manualControl.ManualControlFragment"
+        android:name="com.schneewittchen.aiotr.ui.fragments.manualControl.ManualControlFragment"
         android:label="manualControlFragment"
         tools:layout="@layout/fragment_manual_control"/>
 

@@ -15,19 +15,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.mapbox.mapboxsdk.maps.MapView
-        android:id="@+id/mapView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:mapbox_cameraTargetLat="@string/default_lat"
-        app:mapbox_cameraTargetLng="@string/default_lon"
-        app:mapbox_cameraZoom="17" />
+    <com.schneewittchen.aiotr.ui.fragments.viz.WidgetViewGroup
+        android:id="@+id/widget_groupview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="8dp"
+        app:crossColor="#000000"/>
 
-    <com.schneewittchen.rosandroid.widgets.joystick.JoystickView
+    <com.schneewittchen.aiotr.widgets.joystick.JoystickView
         android:id="@+id/joystick"
         android:layout_width="300dp"
         android:layout_height="300dp"
