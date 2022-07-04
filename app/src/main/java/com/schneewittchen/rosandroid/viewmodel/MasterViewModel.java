@@ -63,8 +63,9 @@ public class MasterViewModel extends AndroidViewModel {
     public void setMasterIp(String ipString) {
         MasterEntity master = currentMaster.getValue();
 
-        if (master == null) return;
-
+        if (master == null) {
+            return;
+        }
         master.ip = ipString;
         rosDomain.updateMaster(master);
     }
