@@ -101,7 +101,7 @@ public class JoystickView extends PublisherWidgetView {
             case MotionEvent.ACTION_MOVE:
             case MotionEvent.ACTION_DOWN:
                 moveTo(polars[0], polars[1]);
-                manualControlFragment.onJoystickMove(polars[0], polars[1]);
+//                manualControlFragment.onJoystickMove(polars[0], polars[1]);
                 break;
 
             default:

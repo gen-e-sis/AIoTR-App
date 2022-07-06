@@ -77,7 +77,7 @@ public class DetailMainFragment extends Fragment
         recyclerView = view.findViewById(R.id.recyclerview);
         addWidgetCard = view.findViewById(R.id.add_widget_card);
 
-        navController = Navigation.findNavController(view);
+//        navController = Navigation.findNavController(view);
 
         // React on new widget click action
         addWidgetCard.setOnClickListener(v -> showDialogWithWidgetNames());

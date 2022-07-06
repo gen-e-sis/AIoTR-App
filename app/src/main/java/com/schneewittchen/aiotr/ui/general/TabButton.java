@@ -17,6 +17,7 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 
 import com.schneewittchen.aiotr.R;
+import com.schneewittchen.aiotr.ui.fragments.details.DetailContentFragment;
 import com.schneewittchen.aiotr.ui.fragments.details.DetailMainFragment;
 import com.schneewittchen.aiotr.ui.fragments.home.HomeFragment;
 import com.schneewittchen.aiotr.ui.fragments.manualControl.ManualControlFragment;
